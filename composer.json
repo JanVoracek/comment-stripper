@@ -1,0 +1,20 @@
+{
+    "name": "janvoracek/comment-stripper",
+    "description": "Strips the comments from PHP file",
+    "keywords": [
+        "comment",
+        "strip"
+    ],
+    "authors": [
+        {
+            "name": "JanVoracek",
+            "email": "jan@voracek.net"
+        }
+    ],
+    "homepage": "https://github.com/JanVoracek/comment-stripper/",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "bin": ["strip"]
+}

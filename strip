@@ -1,0 +1,24 @@
+<?php
+$cwd = getcwd();
+$file = $cwd . '/' . $argv[1];
+
+
+$fileContent = file_get_contents($file);
+$strippedContent  = '';
+
+$commentTokens = array(T_COMMENT, T_DOC_COMMENT);
+$tokens = token_get_all($fileContent);
+
+foreach ($tokens as $token) {    
+    if (is_array($token)) {
+        if (in_array($token[0], $commentTokens)) {
+            $token = "\n";
+        } else {
+        	$token = $token[1];
+        }
+    }
+
+    $strippedContent .= $token;
+}
+
+echo preg_replace("/([\r\n]{2,})[\s\t]*[\r\n]+/", "\r\n\r\n", $strippedContent);
