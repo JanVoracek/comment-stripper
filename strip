@@ -1,6 +1,5 @@
 <?php
-$cwd = getcwd();
-$file = $cwd . '/' . $argv[1];
+$file = $argv[1];
 
 
 $fileContent = file_get_contents($file);
